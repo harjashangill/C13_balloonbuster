@@ -1,5 +1,7 @@
 var bow , arrow,  background;
 var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImage ,blue_balloonImage, backgroundImage;
+var score = 0
+
 
 function preload(){
   
@@ -33,8 +35,7 @@ function draw() {
  background(0);
   // moving ground
     scene.velocityX = -3 
-
-   
+    
 
 
     if (scene.x < 0){
@@ -55,6 +56,8 @@ function draw() {
   
   spawnBalloons()
   drawSprites();
+  text("Score: "+ score,270,30)
+    score = score + Math.round(frameCount/130)
 }
 
 function spawnBalloons(){
